@@ -1,0 +1,388 @@
+import React from "react";
+import bannerImgage from "../../Assets/photo.webp";
+const ProjectCard = ({
+  title,
+  main,
+  demoLink,
+  sourceCodeLink,
+  bannerImg = "bannerImgage",
+}) => {
+  return (
+    <div className="p-2 md:p-4 pb-0 mb-0 flex flex-col w-full h-[450px] bg-[#0c0e19] shadow-xl shadow-slate-900 rounded-2xl">
+    {/* Project Title */}
+    <h3 className="px-3 text-xl md:text-2xl font-bold leading-normal mb-2">
+      {title}
+    </h3>
+    
+    {/* Banner Image */}
+    <img
+      className="h-40 w-full object-cover rounded-t-lg"
+      src={bannerImg}
+      alt=""
+    />
+    
+    {/* Project Description */}
+    <p className="px-3 text-sm md:text-md leading-tight py-2 flex-grow">
+      {main}
+    </p>
+    
+    {/* Demo and Source Code Links */}
+    <div className="mt-auto p-2 flex gap-2">
+      <a
+        href={demoLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-white py-2 px-3 text-sm md:text-lg hover:opacity-85 duration-300 hover:scale-105 font-semibold rounded-3xl bg-[#465697]"
+      >
+        Demo
+      </a>
+      <a
+        href={sourceCodeLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-white py-2 px-3 text-sm md:text-lg hover:opacity-85 duration-300 hover:scale-105 font-semibold rounded-3xl bg-[#465697]"
+      >
+        Source Code
+      </a>
+    </div>
+  </div>
+  
+  );
+};
+
+export default ProjectCard;
+
+
+======================================================
+
+
+// / Complete integrated component with ProjectCard implementation
+
+import React, { useState } from "react";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
+
+// ProjectCard component
+const ProjectCard = ({
+  title,
+  main,
+  demoLink,
+  sourceCodeLink,
+  bannerImg,
+  projectImages = [],
+  projectDetails = "",
+}) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  
+  // If no additional images are provided, use the banner image
+  const allImages = projectImages.length > 0 ? projectImages : [bannerImg];
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+  
+  const nextImage = (e) => {
+    e.stopPropagation();
+    setCurrentImageIndex((prevIndex) => 
+      prevIndex === allImages.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+  
+  const prevImage = (e) => {
+    e.stopPropagation();
+    setCurrentImageIndex((prevIndex) => 
+      prevIndex === 0 ? allImages.length - 1 : prevIndex - 1
+    );
+  };
+
+  return (
+    <>
+      <div className="p-2 md:p-4 pb-0 mb-0 flex flex-col w-full h-[450px] bg-[#0c0e19] shadow-xl shadow-slate-900 rounded-2xl">
+        {/* Project Title */}
+        <h3 className="px-3 text-xl md:text-2xl font-bold leading-normal mb-2">
+          {title}
+        </h3>
+
+        {/* Banner Image with zoom on hover and click to open modal */}
+        <div
+          className="overflow-hidden rounded-t-lg cursor-pointer"
+          onClick={openModal}
+        >
+          <img
+            className="h-40 w-full object-cover transform transition-transform duration-300 ease-in-out hover:scale-110"
+            src={bannerImg}
+            alt={title}
+          />
+        </div>
+
+        {/* Project Description */}
+        <p className="px-3 text-sm md:text-md leading-tight py-2 flex-grow">
+          {main}
+        </p>
+
+        {/* Demo and Source Code Links */}
+        <div className="mt-auto p-2 flex gap-2">
+          <a
+            href={demoLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white py-2 px-3 text-sm md:text-lg hover:opacity-85 duration-300 hover:scale-105 font-semibold rounded-3xl bg-[#465697]"
+          >
+            Demo
+          </a>
+          <a
+            href={sourceCodeLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white py-2 px-3 text-sm md:text-lg hover:opacity-85 duration-300 hover:scale-105 font-semibold rounded-3xl bg-[#465697]"
+          >
+            Source Code
+          </a>
+        </div>
+      </div>
+
+      {/* Enhanced Modal based on reference image */}
+      {isModalOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50 p-4">
+          <div 
+            className="bg-[#0c0e19] rounded-lg shadow-xl w-full max-w-6xl max-h-[90vh] overflow-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Modal Header with title and close button */}
+            <div className="flex justify-between items-center border-b border-gray-700 p-4">
+              <h2 className="text-2xl font-bold text-white">{title}</h2>
+              <button 
+                onClick={closeModal}
+                className="text-gray-400 hover:text-white"
+              >
+                <X size={24} />
+              </button>
+            </div>
+            
+            {/* Two-column layout for content */}
+            <div className="flex flex-col md:flex-row">
+              {/* Left column: Project info and links */}
+              <div className="w-full md:w-1/2 p-6 border-r border-gray-700">
+                <h3 className="text-xl font-semibold mb-4">{title}</h3>
+                <p className="text-gray-300 mb-6">{main}</p>
+                
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <a
+                    href={demoLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white py-3 px-6 text-center text-lg font-semibold rounded-lg bg-[#465697] hover:bg-[#374487] transition-colors"
+                  >
+                    View Demo
+                  </a>
+                  <a
+                    href={sourceCodeLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white py-3 px-6 text-center text-lg font-semibold rounded-lg bg-[#465697] hover:bg-[#374487] transition-colors"
+                  >
+                    View Source Code
+                  </a>
+                </div>
+              </div>
+              
+              {/* Right column: Image gallery with navigation arrows */}
+              <div className="w-full md:w-1/2 p-6">
+                <h3 className="text-xl font-semibold mb-4">Photos</h3>
+                <div className="relative">
+                  <img
+                    src={allImages[currentImageIndex]}
+                    alt={`${title} - Photo ${currentImageIndex + 1}`}
+                    className="w-full h-auto rounded-lg"
+                  />
+                  
+                  {/* Navigation arrows */}
+                  {allImages.length > 1 && (
+                    <>
+                      <button
+                        onClick={prevImage}
+                        className="absolute left-2 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 p-2 rounded-full text-white hover:bg-opacity-70"
+                      >
+                        <ChevronLeft size={24} />
+                      </button>
+                      <button
+                        onClick={nextImage}
+                        className="absolute right-2 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 p-2 rounded-full text-white hover:bg-opacity-70"
+                      >
+                        <ChevronRight size={24} />
+                      </button>
+                    </>
+                  )}
+                  
+                  {/* Image counter */}
+                  {allImages.length > 1 && (
+                    <div className="absolute bottom-2 right-2 bg-black bg-opacity-50 px-2 py-1 rounded text-white text-sm">
+                      {currentImageIndex + 1} / {allImages.length}
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+            
+            {/* Project details section */}
+            <div className="p-6 border-t border-gray-700">
+              <h3 className="text-xl font-semibold mb-4">Project Details</h3>
+              <p className="text-gray-300">
+                {projectDetails || main}
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
+  );
+};
+
+// Example usage of the ProjectCard component
+const ProjectShowcase = () => {
+  // Sample project data
+  const projectData = {
+    title: "EV Sales Analytics",
+    main: "This project analyzed India's Electric Vehicle (EV) market to support AtIQ Motors' expansion efforts. The study provided actionable insights into market trends, key players, and state-wise EV adoption.",
+    demoLink: "https://example.com/demo",
+    sourceCodeLink: "https://github.com/example/project",
+    bannerImg: "/api/placeholder/800/400",
+    projectImages: [
+      "/api/placeholder/800/400",
+      "/api/placeholder/800/400",
+      "/api/placeholder/800/400",
+      "/api/placeholder/800/400"
+    ],
+    projectDetails: `
+      Project Objective:
+      To assist AtIQ Motors in increasing its EV market share in India, currently below 2%, by analyzing sales data and identifying growth opportunities.
+      
+      Key Insights:
+      - Market Leadership: Tata Motors emerged as the dominant EV manufacturer.
+      - State-Wise Analysis: Goa, Maharashtra, and Karnataka showed high EV adoption rates, with Maharashtra leading in charging infrastructure.
+      - Product Trends: 2-wheelers dominated the market, accounting for 91% of EV sales.
+      
+      Recommendations:
+      - R&D Investment: Focus on developing innovative EV technologies tailored to Indian needs.
+      - Leverage Subsidies: Capitalize on government incentives for EV adoption.
+      - Localization: Adapt products to regional preferences and market demands.
+      
+      Tools Used:
+      Excel for data exploration and visualization.
+      
+      Impact:
+      The project offered a roadmap for AtIQ Motors to enhance its market presence, optimize investments, and align with consumer and infrastructure trends in the EV sector.
+    `
+  };
+
+  return (
+    <div className="max-w-md mx-auto">
+      <ProjectCard {...projectData} />
+    </div>
+  );
+};
+
+export default ProjectShowcase;
+
+
+==================================================++++++++++++
+
+import React from "react";
+import ProjectCard from "./ProjectsCards";
+import bannerImg from "../../Assets/photo.webp";
+
+const Projects = () => {
+  return (
+    <div id="Projects" className="px-10 md:px-24 pt-10 md:pt-24 pb-0 mb-0 text-white">
+      <h1 className="text-2xl md:text-4xl text-white font-bold text-left mb-8">
+        Projects
+      </h1>
+      <div className="pt-6 px-8 pb-0 flex flex-wrap gap-6 justify-center">
+        {/* <div className="flex-1 min-w-[250px] max-w-[350px]">
+          <ProjectCard
+            title="Blogging Website"
+            main="This is a blogging website created in Next.js and uses a component library."
+            demoLink="https://example.com/demo"
+            sourceCodeLink="https://example.com/source"
+            bannerImg="https://via.placeholder.com/300"
+          />
+        </div> */}
+        <div className="flex-1 min-w-[250px] max-w-[350px]">
+          <ProjectCard
+            title="Currency Converter"
+            main="A React-based Currency Converter with real-time rates, default USD to INR, featuring state management, props, hooks, and swap functionality."
+            demoLink="https://Rohitkamble6458.github.io/CurrencyConverter/"
+            sourceCodeLink="https://github.com/Rohitkamble6458/CurrencyConverter"
+            bannerImg="src/Assets/ProjectPhotos/CurrencyConverter.jpeg"
+          />
+        </div>
+        <div className="flex-1 min-w-[250px] max-w-[350px]">
+          <ProjectCard
+            title="Password Generator"
+            main="A responsive React-based password generator using hooks like `useState`, `useEffect`, and `useCallback`, with customizable options and a copy-to-clipboard feature."
+            demoLink="https://rohitkamble6458.github.io/Password-Generator/"
+            sourceCodeLink="https://github.com/Rohitkamble6458/Password-Generator"
+            bannerImg="src/Assets/ProjectPhotos/passwordGenrator.jpeg"
+          />
+        </div>
+        <div className="flex-1 min-w-[250px] max-w-[350px]">
+          <ProjectCard
+            title="Amazon UI Clone"
+            main="A responsive Amazon homepage replica built with HTML and CSS."
+            demoLink="https://rohitkamble6458.github.io/Amazon_UI_clone/"
+            sourceCodeLink="https://github.com/Rohitkamble6458/Amazon_UI_clone"
+            bannerImg="src/Assets/ProjectPhotos/AmazonUiClone.jpeg"
+          />
+        </div>
+        <div className="flex-1 min-w-[250px] max-w-[350px]">
+          <ProjectCard
+            title="Awesome JS_Project"
+            main="A collection of interactive JavaScript projects showcasing DOM manipulation, event handling, and dynamic web features, ideal for learning and practicing front-end development."
+            demoLink="https://rohitkamble6458.github.io/Practice-Javascript-project/"
+            sourceCodeLink="https://github.com/Rohitkamble6458/Practice-Javascript-project"
+            bannerImg="src/Assets/ProjectPhotos/JSProjectsList.jpeg"
+          />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Projects;
+
+
+
+
+
+
+
+
+
+const projects = [
+  {
+    title: "Business insights 360",
+    main: "Developed an interactive Power BI dashboard to analyze AtliQ Hardware’s global sales trends using data from Excel and SQL sources. Built a clean data model, optimized DAX calculations with DAX Studio, and delivered key insights that supported a projected 10% revenue increase and 20% reduction in data processing costs.",
+    demoLink: "https://rohitkamble6458.github.io/Practice-Javascript-project/",
+    sourceCodeLink:"https://github.com/Rohitkamble6458/Sales-and-Financial-Report",
+    bannerImg: power,
+    projectImages: [power,business],
+    powerBiEmbedUrl:"https://app.powerbi.com/view?r=eyJrIjoiNGVmNWRhM2EtYjc5Ny00NWI1LTllZjItMjRjMmUwY2YyZTIxIiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJjNCJ9",
+    powerBILink:"https://app.powerbi.com/links/M-M99HElPw?ctid=c00f2735-2bde-49be-9ecf-45797a22c02d&pbi_source=linkShare&bookmarkGuid=a7d84a87-bc53-455b-9645-41d6c6f659ca",
+    projectDetails: `Need to develop a dashboard for AtliQ hardware focusing on Finance, Sales, Marketing, Supply Chain, and Executive areas.
+
+Focused Areas:
+
+Data Modeling (Star Schemas & Partial Snowflake Schemas)
+Interactive and user-friendly dynamic dashboards
+Data drill-down capabilities
+Key Learnings:
+Advanced Power Query
+Complex DAX Formulas
+Data Modeling with 10+ tables
+Using Bookmarks to Switch Visuals
+Navigation Buttons
+Tooltips
+Updating Stakeholder Requirements
+DAX Studio
+Metrics for Sales, Marketing, Finance, and Supply Chain`,
+  },
+]

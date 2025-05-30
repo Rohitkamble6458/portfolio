@@ -1,0 +1,61 @@
+import React from "react";
+import ProjectCard from "./ProjectCard";
+
+const projects = [
+  {
+    title: "EV Sales Analytics",
+    main:
+      "Analyzed India's Electric Vehicle market for AtIQ Motors, providing insights on trends and adoption.",
+    demoLink: "https://example.com/demo1",
+    sourceCodeLink: "https://github.com/example/project1",
+    bannerImg: "https://via.placeholder.com/800x400?text=EV+Sales+Analytics",
+    projectImages: [
+      "https://via.placeholder.com/800x400?text=EV+1",
+      "https://via.placeholder.com/800x400?text=EV+2",
+      "https://via.placeholder.com/800x400?text=EV+3",
+    ],
+    projectDetails: `Project Objective: Assist AtIQ Motors in increasing EV market share.\nKey Insights: Tata Motors leads; Maharashtra charging infra.\nRecommendations: R&D investment, leverage subsidies.`,
+  },
+  {
+    title: "Deepfake Detection CNN",
+    main:
+      "Developed a CNN-based deepfake detector using transfer learning with Xception model.",
+    demoLink: "https://example.com/demo2",
+    sourceCodeLink: "https://github.com/example/project2",
+    bannerImg: "https://via.placeholder.com/800x400?text=Deepfake+Detection",
+    projectImages: [
+      "https://via.placeholder.com/800x400?text=Deepfake+1",
+      "https://via.placeholder.com/800x400?text=Deepfake+2",
+    ],
+    projectDetails:
+      "Model trained on deepfake datasets to identify manipulated images.\nTechnologies: Python, TensorFlow, Keras.\nOutcome: High accuracy and real-time detection.",
+  },
+  {
+    title: "Smart Attendance System",
+    main:
+      "An attendance management system with CRUD and Excel export functionalities.",
+    demoLink: "https://example.com/demo3",
+    sourceCodeLink: "https://github.com/example/project3",
+    bannerImg: "https://via.placeholder.com/800x400?text=Attendance+System",
+    projectImages: [
+      "https://via.placeholder.com/800x400?text=Attendance+1",
+      "https://via.placeholder.com/800x400?text=Attendance+2",
+      "https://via.placeholder.com/800x400?text=Attendance+3",
+    ],
+    projectDetails:
+      "Features: Save attendance to MySQL, export to Excel, manage students.\nTech Stack: React, MySQL, Node.js.",
+  },
+  // Add more projects as needed
+];
+
+const ProjectShowcase = () => {
+  return (
+    <div className="max-w-6xl mx-auto p-6 space-y-12">
+      {projects.map((project, index) => (
+        <ProjectCard key={index} {...project} />
+      ))}
+    </div>
+  );
+};
+
+export default ProjectShowcase;

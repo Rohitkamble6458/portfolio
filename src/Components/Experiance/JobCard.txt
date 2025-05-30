@@ -1,0 +1,19 @@
+const JobCard = ({ logo, company, position, date, responsibilities }) => {
+    return (
+      <div className="flex flex-col gap-8 bg-slate-950 bg-opacity-45 mt-4 rounded-lg p-4 items-center">
+        <div>{logo}</div>
+        <span className="text-white text-center">
+          <h2 className="leading-tight">{position}, {company}</h2>
+          <p className="text-sm leading-tight font-thin">{date}</p>
+          <ul className="text-sm p-2">
+            {responsibilities.map((item, index) => (
+              <li key={index}>- {item}</li>
+            ))}
+          </ul>
+        </span>
+      </div>
+    );
+  };
+  
+  export default JobCard;
+  
