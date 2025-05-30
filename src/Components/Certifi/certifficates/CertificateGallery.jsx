@@ -1,12 +1,12 @@
 import React from "react";
 import CertificateCard from "./CertificateCard";
 
-// Updated paths to reference public directory
-const ExcelImg = "/Assets/CertificatesPhotos/excel-business-intelligence.jpg";
-const pythonImg = "/Assets/CertificatesPhotos/python-basic.png";
-const SQLImg = "/Assets/CertificatesPhotos/sql-basic.png";
-const Software_engineerImag = "/Assets/CertificatesPhotos/software-engineer.png";
-const JavaScriptImg = "/Assets/CertificatesPhotos/javascript-basic.png";
+// Updated paths to match your exact public directory structure
+const ExcelImg = "/assets/CertificatesPhotos/Excel Mother of Business Intelligence.jpg";
+const pythonImg = "/assets/CertificatesPhotos/Python_basic.png";
+const SQLImg = "/assets/CertificatesPhotos/SQL_basic.png";
+const Software_engineerImag = "/assets/CertificatesPhotos/Software_engineer.png";
+const JavaScriptImg = "/assets/CertificatesPhotos/JavaScript_basic.png";
 
 const certificates = [
   {
