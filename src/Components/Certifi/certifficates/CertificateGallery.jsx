@@ -1,10 +1,11 @@
 import React from "react";
 import CertificateCard from "./CertificateCard";
-import ExcelImg from "../../../Assets/CertificatesPhotos/Excel Mother of Business Intelligence.jpg";
-import pythonImg from "../../../Assets/CertificatesPhotos/Python_basic.png";
-import SQLImg from "../../../Assets/CertificatesPhotos/SQL_basic.png";
-import Software_engineerImag from "../../../Assets/CertificatesPhotos/Software_engineer.png";
-import JavaScriptImg from "../../../Assets/CertificatesPhotos/JavaScript_basic.png";
+import ExcelImg from "src/Assets/CertificatesPhotos/Excel Mother of Business Intelligence.jpg";
+import pythonImg from "src/Assets/CertificatesPhotos/python_basic.png";
+import SQLImg from "src/Assets/CertificatesPhotos/SQl_basic.png";
+
+import Software_engineerImag from "src/Assets/CertificatesPhotos/Software_engineer.png";
+import JavaScriptImg from "src/Assets/CertificatesPhotos/JavaScript_basic.png";
 
 const certificates = [
   {
