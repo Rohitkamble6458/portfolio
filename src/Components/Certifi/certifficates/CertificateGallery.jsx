@@ -1,11 +1,12 @@
 import React from "react";
 import CertificateCard from "./CertificateCard";
 
-import ExcelImg from "../../../Assets/CertificatesPhotos/Excel Mother of Business Intelligence.jpg";
-import pythonImg from "../../../Assets/CertificatesPhotos/python_basic.png";
-import SQLImg from "../../../Assets/CertificatesPhotos/SQl_basic.png";
-import Software_engineerImag from "../../../Assets/CertificatesPhotos/Software_engineer.png";
-import JavaScriptImg from "../../../Assets/CertificatesPhotos/JavaScript_basic.png";
+// Updated paths to reference public directory
+const ExcelImg = "/Assets/CertificatesPhotos/excel-business-intelligence.jpg";
+const pythonImg = "/Assets/CertificatesPhotos/python-basic.png";
+const SQLImg = "/Assets/CertificatesPhotos/sql-basic.png";
+const Software_engineerImag = "/Assets/CertificatesPhotos/software-engineer.png";
+const JavaScriptImg = "/Assets/CertificatesPhotos/javascript-basic.png";
 
 const certificates = [
   {
