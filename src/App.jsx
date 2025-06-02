@@ -4,7 +4,7 @@ import About from './Components/About/About'
 import Experience from './Components/Experiance/Experiance'
 import Projects from './Components/Projects/Projects'
 import Footer from './Components/Footer/Footer'
-import CertificateGallery from './Components/Certifi/certifficates/CertificateGallery'
+import CertificateGallery from './Components/Certifi/CertificateGallery'
 
 
 function App() {

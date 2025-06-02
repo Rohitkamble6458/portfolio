@@ -1,12 +1,13 @@
 import React from "react";
 import CertificateCard from "./CertificateCard";
-import ExcelImg from "../../../Assets/Excel Mother of Business Intelligence.jpg";
+import ExcelImg from "../../Assets/Excel Mother of Business Intelligence.jpg";
 // import pythonImg from "../../../Assets/python_basic.png";
-// import pythonImg from "../../../Assets/python_basic.png";
-import SQLImg from "../../../Assets/SQL_basic.png";
-import Software_engineerImag from "../../../Assets//Software_engineer.png";
+import pythonImg from "../../Assets/python_basic.png";
+import SQLImg from "../../Assets/SQL_basic.png";
+import Software_engineerImag from "../../Assets//Software_engineer.png";
 // import JavaScriptImg from "../../../Assets/CertificatesPhotos/JavaScript_basic.png";
-import JavaScriptImg from "../../../Assets/JavaScript_basic.png";
+import JavaScriptImg from "../../Assets/JavaScript_basic.png";
+// import JavaScriptImg from "../../../Assets/JavaScript_basic.png";
 
 const certificates = [
   {
@@ -17,7 +18,7 @@ const certificates = [
     verifyLink: "https://codebasics.io/certificate/CB-51-276135",
   },
   {
-    image: ExcelImg,
+    image: pythonImg,
     title: "Python Programming Certificate From HackerRank",
     description:
       "Certified for fundamental knowledge in Python including loops, functions, and problem-solving.",
@@ -25,6 +26,7 @@ const certificates = [
   },
   {
     image: SQLImg,
+    // image: <img src="//src//Assets//SQL_basic.png" alt="SQL Basic Certificate" />,
     title: "SQL Basic Certificate from HackerRank",
     description:
       "Verified SQL skills including SELECT, JOIN, GROUP BY, and aggregate functions.",
