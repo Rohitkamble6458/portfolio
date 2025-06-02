@@ -4,7 +4,7 @@ import About from './Components/About/About'
 import Experience from './Components/Experiance/Experiance'
 import Projects from './Components/Projects/Projects'
 import Footer from './Components/Footer/Footer'
-// import Gallery from './Components/Certifi/Gallery'
+import Gallery from './Components/Certifi/Gallery'
 
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
     <About/>
     <Experience/>
     <Projects/>
-    {/* <Gallery/> */}
+    <Gallery/>
     <Footer/>
     
 

@@ -1,7 +1,7 @@
 import React from "react";
 import ProjectCard from "./ProjectsCard";
-import sql from "../../Assets/sql-b icon.png";
-import powerBi from "../../Assets/power-bi icon.png";
+import sql from "../../Assets/sql-b-icon.png";
+import powerBi from "../../Assets/power-bi-icon.png";
 import excel from "../../Assets/excel.svg";
 import python from "../../Assets/python.svg";
 
@@ -11,10 +11,10 @@ import CurrencyConverterImg from "../../Assets/CurrencyConverter.jpeg";
 import CurrencyConverterImg1 from "../../Assets/CurrencyConverter.jpeg";
 import CurrencyConverterImg2 from "../../Assets/CurrencyConverter.jpeg";
 import salesreport from "../../Assets/sales&finance_report.png";
-import salesreportbanner from "../../Assets/exxcel (1).webp";
+import salesreportbanner from "../../Assets/exxcel-(1).webp";
 import sqlbanner from "../../Assets/sql545.png";
 import business from "../../Assets/power600.png";
-import power from "../../Assets/power600 (1).png";
+import power from "../../Assets/power600-(1).png";
 
 import PasswordGeneratorImg from "../../Assets/passwordGenrator.jpeg";
 import PasswordGeneratorImg1 from "../../Assets/passwordGenrator.jpeg";

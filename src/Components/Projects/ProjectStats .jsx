@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
-import sql from "../../assets/sql-b icon.png";
-import powerBi from "../../assets/power-bi icon.png";
+import sql from "../../assets/sql-b-icon.png";
+import powerBi from "../../assets/power-bi-icon.png";
 import excel from "../../assets/excel.svg";
 import python from "../../assets/python.svg";
 

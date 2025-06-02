@@ -1,6 +1,6 @@
 import React from "react";
 import CertificateCard from "./CertificateCard";
-import ExcelImg from "../../Assets/Excel Mother of Business Intelligence.jpg";
+import ExcelImg from "../../Assets/Excel-Mother-of-Business-Intelligence.jpg";
 import pythonImg from "../../Assets/python_basic.png";
 import SQLImg from "../../Assets/SQL_basic.png";
 import Software_engineerImag from "../../Assets//Software_engineer.png";
