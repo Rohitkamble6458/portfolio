@@ -7,22 +7,22 @@ import python from "../../Assets/python.svg";
 
 
 // Import images
-import CurrencyConverterImg from "../../Assets/ProjectPhotos/CurrencyConverter.jpeg";
-import CurrencyConverterImg1 from "../../Assets/ProjectPhotos/CurrencyConverter.jpeg";
-import CurrencyConverterImg2 from "../../Assets/ProjectPhotos/CurrencyConverter.jpeg";
-import salesreport from "../../Assets/ProjectPhotos/sales&finance_report.png";
-import salesreportbanner from "../../Assets/ProjectPhotos/exxcel (1).webp";
-import sqlbanner from "../../Assets/ProjectPhotos/sql545.png";
-import business from "../../Assets/ProjectPhotos/power600.png";
-import power from "../../Assets/ProjectPhotos/power600 (1).png";
+import CurrencyConverterImg from "../../Assets/CurrencyConverter.jpeg";
+import CurrencyConverterImg1 from "../../Assets/CurrencyConverter.jpeg";
+import CurrencyConverterImg2 from "../../Assets/CurrencyConverter.jpeg";
+import salesreport from "../../Assets/sales&finance_report.png";
+import salesreportbanner from "../../Assets/exxcel (1).webp";
+import sqlbanner from "../../Assets/sql545.png";
+import business from "../../Assets/power600.png";
+import power from "../../Assets/power600 (1).png";
 
-import PasswordGeneratorImg from "../../Assets/ProjectPhotos/passwordGenrator.jpeg";
-import PasswordGeneratorImg1 from "../../Assets/ProjectPhotos/passwordGenrator.jpeg";
-import PasswordGeneratorImg2 from "../../Assets/ProjectPhotos/passwordGenrator.jpeg";
+import PasswordGeneratorImg from "../../Assets/passwordGenrator.jpeg";
+import PasswordGeneratorImg1 from "../../Assets/passwordGenrator.jpeg";
+import PasswordGeneratorImg2 from "../../Assets/passwordGenrator.jpeg";
 
-import AmazonUiCloneImg from "../../Assets/ProjectPhotos/AmazonUiClone.jpeg";
+import AmazonUiCloneImg from "../../Assets/AmazonUiClone.jpeg";
 
-import JSProjectsListImg from "../../Assets/ProjectPhotos/JSProjectsList.jpeg";
+import JSProjectsListImg from "../../Assets/JSProjectsList.jpeg";
 
 const projects = [
   {
