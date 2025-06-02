@@ -1,13 +1,10 @@
 import React from "react";
 import CertificateCard from "./CertificateCard";
 import ExcelImg from "../../Assets/Excel Mother of Business Intelligence.jpg";
-// import pythonImg from "../../../Assets/python_basic.png";
 import pythonImg from "../../Assets/python_basic.png";
 import SQLImg from "../../Assets/SQL_basic.png";
 import Software_engineerImag from "../../Assets//Software_engineer.png";
-// import JavaScriptImg from "../../../Assets/CertificatesPhotos/JavaScript_basic.png";
 import JavaScriptImg from "../../Assets/JavaScript_basic.png";
-// import JavaScriptImg from "../../../Assets/JavaScript_basic.png";
 
 const certificates = [
   {
@@ -62,7 +59,7 @@ const certificates = [
   },
 ];
 
-const CertificateGallery = () => {
+const Gallery = () => {
   return (
     <div id="Certificates" className="p-10 mt-0 md:p-24">
       <h1 className="text-2xl md:text-4xl text-white font-bold">
@@ -85,4 +82,4 @@ const CertificateGallery = () => {
   );
 };
 
-export default CertificateGallery;
+export default Gallery;
