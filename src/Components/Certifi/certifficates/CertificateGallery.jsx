@@ -2,7 +2,7 @@ import React from "react";
 import CertificateCard from "./CertificateCard";
 import ExcelImg from "../../../Assets/Excel Mother of Business Intelligence.jpg";
 // import pythonImg from "../../../Assets/python_basic.png";
-import pythonImg from "../../../Assets/python_basic.png";
+// import pythonImg from "../../../Assets/python_basic.png";
 import SQLImg from "../../../Assets/SQL_basic.png";
 import Software_engineerImag from "../../../Assets//Software_engineer.png";
 // import JavaScriptImg from "../../../Assets/CertificatesPhotos/JavaScript_basic.png";
@@ -17,7 +17,7 @@ const certificates = [
     verifyLink: "https://codebasics.io/certificate/CB-51-276135",
   },
   {
-    image: pythonImg,
+    image: ExcelImg,
     title: "Python Programming Certificate From HackerRank",
     description:
       "Certified for fundamental knowledge in Python including loops, functions, and problem-solving.",
