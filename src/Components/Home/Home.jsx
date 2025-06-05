@@ -16,6 +16,7 @@ const Home = () => {
       // Method 1: Direct download using fetch (recommended)
       const resumePath = "/Resume/Resume.pdf"; // Remove 'public' from path
       
+      
       fetch(resumePath)
         .then(response => {
           if (!response.ok) {
