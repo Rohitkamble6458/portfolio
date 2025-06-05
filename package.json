@@ -6,7 +6,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://Rohitkamble6458.github.io/portfolio-website",
+  "homepage": "https://Rohitkamble6458.github.io/portfolio",
   
   "scripts": {
     "dev": "vite",
