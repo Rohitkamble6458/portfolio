@@ -11,9 +11,51 @@ import Avatar from "../../Assets/Profile_photo.jpg";
 const Home = () => {
   const downloadResume = (e) => {
     e.preventDefault();
+    
+    try {
+      // Method 1: Direct download using fetch (recommended)
+      const resumePath = "/Resume/Resume.pdf"; // Remove 'public' from path
+      
+      fetch(resumePath)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Resume file not found');
+          }
+          return response.blob();
+        })
+        .then(blob => {
+          const url = window.URL.createObjectURL(blob);
+          const link = document.createElement("a");
+          link.href = url;
+          link.download = "RohitKamble_Resume.pdf";
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+          window.URL.revokeObjectURL(url);
+        })
+        .catch(error => {
+          console.error('Error downloading resume:', error);
+          // Fallback: try direct link method
+          window.open(resumePath, '_blank');
+        });
+    } catch (error) {
+      console.error('Download failed:', error);
+      alert('Sorry, unable to download resume. Please try again later.');
+    }
+  };
+
+  // Alternative method - simpler approach
+  const downloadResumeSimple = (e) => {
+    e.preventDefault();
+    const resumePath = "/Resume/Resume.pdf";
+    
+    // Create a temporary link element
     const link = document.createElement("a");
-    link.href = "/public/Resume/Resume.pdf"; // Your correct path here
+    link.href = resumePath;
     link.download = "RohitKamble_Resume.pdf";
+    link.target = "_blank"; // Fallback to open in new tab if download fails
+    
+    // Add to DOM, click, and remove
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -95,20 +137,17 @@ const Home = () => {
               </button>
             </a>
 
-            {/* Updated Resume download button */}
-            <a
-              href="/public/Resume/Resume.pdf"
+            {/* Fixed Resume download button */}
+            <button
               onClick={downloadResume}
               className="group relative overflow-hidden text-white py-3 px-6 text-sm md:text-lg font-semibold rounded-full bg-gradient-to-r from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-slate-500/25 transform active:scale-95 flex items-center gap-2 border border-slate-600"
-              role="button"
-              tabIndex={0}
             >
               <span className="relative z-10 flex items-center gap-2">
                 Resume
                 <Download className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-y-1 transition-transform duration-300" />
               </span>
               <div className="absolute inset-0 bg-gradient-to-r from-slate-600 to-slate-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </a>
+            </button>
           </div>
 
           {/* Enhanced social cards */}
