@@ -24,7 +24,7 @@ const Footer = () => {
       label: "LinkedIn",
       color: "text-blue-600",
       bgColor: "from-blue-600/20 to-blue-800/20",
-      hoverColor: "hover:text-blue-400"
+      hoverColor: "hover:text-blue-400",
     },
     {
       href: "https://github.com/Rohitkamble6458",
@@ -32,7 +32,7 @@ const Footer = () => {
       label: "GitHub",
       color: "text-white",
       bgColor: "from-gray-600/20 to-gray-800/20",
-      hoverColor: "hover:text-gray-300"
+      hoverColor: "hover:text-gray-300",
     },
     {
       href: "https://www.hackerrank.com/profile/rohitkamble6451",
@@ -40,8 +40,8 @@ const Footer = () => {
       label: "HackerRank",
       color: "text-green-400",
       bgColor: "from-green-600/20 to-green-800/20",
-      hoverColor: "hover:text-green-300"
-    }
+      hoverColor: "hover:text-green-300",
+    },
   ];
 
   return (
@@ -52,10 +52,10 @@ const Footer = () => {
       >
         {/* Animated background with gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-slate-800 via-slate-900 to-black"></div>
-        
+
         {/* Animated overlay */}
         <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 via-purple-600/10 to-cyan-600/10 opacity-50"></div>
-        
+
         {/* Floating background particles */}
         <div className="absolute inset-0 pointer-events-none">
           {[...Array(12)].map((_, i) => (
@@ -66,7 +66,7 @@ const Footer = () => {
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
                 animationDelay: `${i * 0.3}s`,
-                animationDuration: `${3 + Math.random() * 3}s`
+                animationDuration: `${3 + Math.random() * 3}s`,
               }}
             />
           ))}
@@ -80,37 +80,46 @@ const Footer = () => {
         </div>
 
         {/* Contact Section */}
-        <div className={`relative z-10 transition-all duration-1000 transform ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-        }`}>
+        <div
+          className={`relative z-10 transition-all duration-1000 transform ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
           <div className="relative group">
             {/* Glowing background for title */}
             <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-700"></div>
-            
+
             <div className="relative">
               <h1 className="text-2xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
                 Contact
-                
                 {/* Animated particles around title */}
                 <div className="absolute -top-2 -right-4 w-3 h-3 bg-blue-400 rounded-full animate-ping opacity-60"></div>
                 <div className="absolute -bottom-2 -left-4 w-2 h-2 bg-purple-400 rounded-full animate-pulse opacity-60"></div>
               </h1>
-              
+
               {/* Animated underline */}
               <div className="absolute -bottom-2 left-0 w-0 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500 rounded-full animate-widthGrow"></div>
             </div>
           </div>
 
-          <h3 className={`text-sm md:text-2xl font-normal mb-6 text-slate-300 transition-all duration-700 delay-300 transform ${
-            isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'
-          }`}>
+          <h3
+            className={`text-sm md:text-2xl font-normal mb-6 text-slate-300 transition-all duration-700 delay-300 transform ${
+              isVisible
+                ? "opacity-100 translate-x-0"
+                : "opacity-0 -translate-x-4"
+            }`}
+          >
             Feel free to reach out!
           </h3>
 
           {/* Enhanced Email Link */}
-          <div className={`transition-all duration-700 delay-500 transform ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-          }`}>
+          <div
+            className={`transition-all duration-700 delay-500 transform ${
+              isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-4"
+            }`}
+          >
             <a
               href="mailto:rohitkamble6458@gmail.com"
               className="relative group inline-flex items-center gap-3 mt-4 p-4 rounded-xl transition-all duration-500 hover:scale-105 transform"
@@ -120,25 +129,25 @@ const Footer = () => {
               {/* Background effects */}
               <div className="absolute inset-0 bg-gradient-to-r from-slate-700/30 to-slate-800/30 rounded-xl border border-slate-600/30 group-hover:border-blue-500/50 transition-all duration-500"></div>
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-              
+
               {/* Icon with animation */}
               <div className="relative z-10 p-2 rounded-lg bg-gradient-to-r from-blue-500/20 to-purple-500/20 group-hover:scale-110 transition-all duration-300">
-                <MdOutlineEmail 
-                  size={24} 
+                <MdOutlineEmail
+                  size={24}
                   className={`transition-all duration-300 ${
-                    emailHovered ? 'text-blue-400 animate-pulse' : 'text-white'
+                    emailHovered ? "text-blue-400 animate-pulse" : "text-white"
                   }`}
                 />
               </div>
-              
+
               {/* Email text */}
               <span className="relative z-10 text-white group-hover:text-blue-300 transition-all duration-300 font-medium">
                 rohitkamble6458@gmail.com
               </span>
-              
+
               {/* Hover line effect */}
               <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 group-hover:w-full transition-all duration-500 rounded-full"></div>
-              
+
               {/* Sparkle effect */}
               <div className="absolute top-1 right-1 w-1.5 h-1.5 bg-blue-400 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-ping transition-all duration-500"></div>
             </a>
@@ -146,17 +155,19 @@ const Footer = () => {
         </div>
 
         {/* Social Links Section */}
-        <div className={`relative z-10 transition-all duration-1000 delay-300 transform ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-        }`}>
+        <div
+          className={`relative z-10 transition-all duration-1000 delay-300 transform ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
           <div className="flex flex-wrap gap-4 justify-center md:justify-start">
             {socialLinks.map((social, index) => (
-              <div 
+              <div
                 key={social.label}
                 className={`transition-all duration-500 transform ${
-                  isVisible 
-                    ? 'opacity-100 translate-y-0 scale-100' 
-                    : 'opacity-0 translate-y-4 scale-90'
+                  isVisible
+                    ? "opacity-100 translate-y-0 scale-100"
+                    : "opacity-0 translate-y-4 scale-90"
                 }`}
                 style={{ animationDelay: `${600 + index * 150}ms` }}
               >
@@ -175,17 +186,19 @@ const Footer = () => {
         </div>
 
         {/* Decorative bottom section */}
-        <div className={`absolute bottom-4 left-1/2 transform -translate-x-1/2 transition-all duration-1000 delay-700 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-        }`}>
+        <div
+          className={`absolute bottom-4 left-1/2 transform -translate-x-1/2 transition-all duration-1000 delay-700 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+          }`}
+        >
           <div className="flex gap-2">
             {[...Array(5)].map((_, i) => (
-              <div 
+              <div
                 key={i}
                 className="w-1 h-6 bg-gradient-to-t from-blue-500 to-purple-500 rounded-full animate-pulse"
-                style={{ 
+                style={{
                   animationDelay: `${i * 200}ms`,
-                  height: `${12 + Math.random() * 12}px`
+                  height: `${12 + Math.random() * 12}px`,
                 }}
               />
             ))}
@@ -225,7 +238,15 @@ const Footer = () => {
 };
 
 // Enhanced Social Card Component
-const EnhancedSocialCard = ({ href, icon: Icon, label, color, bgColor, hoverColor, index }) => {
+const EnhancedSocialCard = ({
+  href,
+  icon: Icon,
+  label,
+  color,
+  bgColor,
+  hoverColor,
+  index,
+}) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -238,25 +259,31 @@ const EnhancedSocialCard = ({ href, icon: Icon, label, color, bgColor, hoverColo
       onMouseLeave={() => setIsHovered(false)}
     >
       {/* Main card container */}
-      <div className="relative p-6 rounded-2xl bg-gradient-to-br from-slate-700/50 to-slate-800/50 border border-slate-600/30 group-hover:border-slate-500/50 backdrop-blur-sm transition-all duration-500">
-        
+      <div className="relative flex items-center gap-3 px-5 py-3 rounded-xl border border-white/10 backdrop-blur-md bg-white/5 hover:border-white/20 transition-all duration-500 shadow-md">
         {/* Glowing background effect */}
-        <div className={`absolute inset-0 bg-gradient-to-br ${bgColor} rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-500 blur-sm`}></div>
-        
+        <div
+          className={`absolute inset-0 bg-gradient-to-br ${bgColor} rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-500 blur-sm`}
+        ></div>
+
         {/* Icon container */}
         <div className="relative z-10 flex items-center justify-center">
-          <div className="relative p-3 rounded-xl bg-gradient-to-br from-slate-600/30 to-slate-700/30 group-hover:scale-110 transition-all duration-300">
-            <Icon 
-              size={32} 
+          <div className="relative p-2 rounded-md bg-white/10 group-hover:scale-105 transition-all duration-300">
+            <Icon
+              size={32}
               className={`${color} ${hoverColor} transition-all duration-300 ${
-                isHovered ? 'animate-pulse' : ''
+                isHovered ? "animate-pulse" : ""
               }`}
             />
-            
+
             {/* Sparkle effects */}
             <div className="absolute -top-1 -right-1 w-2 h-2 bg-white rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-ping transition-all duration-500"></div>
             <div className="absolute -bottom-1 -left-1 w-1.5 h-1.5 bg-blue-400 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-all duration-500"></div>
           </div>
+          <span
+              className={`ml-2 text-sm font-semibold ${color} group-hover:opacity-80 transition-all duration-300`}
+            >
+              {label}
+            </span>
         </div>
 
         {/* Floating particles */}
@@ -276,20 +303,22 @@ const EnhancedSocialCard = ({ href, icon: Icon, label, color, bgColor, hoverColo
       </div>
 
       {/* Enhanced tooltip */}
-      <div className={`absolute -bottom-2 left-1/2 transform -translate-x-1/2 transition-all duration-500 ${
-        isHovered 
-          ? 'opacity-100 translate-y-12 scale-100' 
-          : 'opacity-0 translate-y-8 scale-90 pointer-events-none'
-      }`}>
+      <div
+        className={`absolute -bottom-2 left-1/2 transform -translate-x-1/2 transition-all duration-500 ${
+          isHovered
+            ? "opacity-100 translate-y-12 scale-100"
+            : "opacity-0 translate-y-8 scale-90 pointer-events-none"
+        }`}
+      >
         <div className="relative">
           {/* Tooltip background */}
           <div className="bg-black/90 backdrop-blur-sm text-white text-xs px-3 py-2 rounded-lg border border-slate-600/50 whitespace-nowrap font-medium shadow-xl">
             {label}
-            
+
             {/* Tooltip arrow */}
             <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-black/90 border-l border-t border-slate-600/50 rotate-45"></div>
           </div>
-          
+
           {/* Glow effect */}
           <div className="absolute inset-0 bg-blue-500/30 rounded-lg blur-md -z-10"></div>
         </div>
@@ -297,9 +326,11 @@ const EnhancedSocialCard = ({ href, icon: Icon, label, color, bgColor, hoverColo
 
       {/* Ripple effect */}
       <div className="absolute inset-0 rounded-2xl overflow-hidden pointer-events-none">
-        <div className={`absolute inset-0 bg-white/10 rounded-full transform scale-0 ${
-          isHovered ? 'animate-ping' : ''
-        } transition-all duration-700`}></div>
+        <div
+          className={`absolute inset-0 bg-white/10 rounded-full transform scale-0 ${
+            isHovered ? "animate-ping" : ""
+          } transition-all duration-700`}
+        ></div>
       </div>
     </a>
   );

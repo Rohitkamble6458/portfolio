@@ -7,10 +7,10 @@ const SocialCard = ({ href, icon: Icon, label, color }) => {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="w-20 h-20 flex mt-5 flex-col items-center justify-center rounded-xl shadow-md bg-[#0c0e19] hover:shadow-xl transition duration-300 text-center"
+      className={`flex items-center gap-2 px-4 py-2 rounded-xl border border-white/10 bg-white/5 backdrop-blur-md transition-all duration-300 hover:scale-105`}
     >
-      <Icon className={`text-4xl mb-2 ${color}`} />
-      <span className="text-sm font-medium text-white">{label}</span>
+      <Icon className={`${color} w-5 h-5`} />
+      <span className={`${color} font-medium`}>{label}</span>
     </a>
   );
 };

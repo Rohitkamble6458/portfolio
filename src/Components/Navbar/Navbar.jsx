@@ -99,7 +99,7 @@ const Navbar = () => {
               key={item.name}
               href={item.href} 
               onClick={() => handleLinkClick(item.name)}
-              className="relative group"
+              className="relative group flex items-center gap-2"
             >
               <li className={`relative px-4 py-3 text-lg font-semibold cursor-pointer transition-all duration-500 hover:scale-105 transform rounded-xl ${
                 activeSection === item.name 
@@ -111,11 +111,19 @@ const Navbar = () => {
                 {/* Animated background */}
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-300 scale-95 group-hover:scale-100"></div>
                 
-                {/* Icon and text */}
-                <span className="relative flex items-center gap-2">
-                  <span className="text-sm opacity-0 group-hover:opacity-100 transform scale-75 group-hover:scale-100 transition-all duration-300">
-                    {item.icon}
-                  </span>
+                {/* Icon left side */}
+                <span
+                  className={`text-sm transform transition-all duration-300 ${
+                    activeSection === item.name
+                      ? 'opacity-100 scale-100'
+                      : 'opacity-0 scale-75 group-hover:opacity-100 group-hover:scale-100'
+                  }`}
+                >
+                  {item.icon}
+                </span>
+                
+                {/* Text */}
+                <span className="relative">
                   {item.name}
                 </span>
                 
@@ -181,7 +189,7 @@ const Navbar = () => {
                   onClick={() => handleLinkClick(item.name)}
                   className="block"
                 >
-                  <li className={`group relative p-4 text-xl font-semibold cursor-pointer transition-all duration-500 rounded-xl hover:scale-105 transform ${
+                  <li className={`group relative flex items-center gap-3 p-4 text-xl font-semibold cursor-pointer transition-all duration-500 rounded-xl hover:scale-105 transform ${
                     menu ? 'animate-slideInMobile' : ''
                   } ${
                     activeSection === item.name 
@@ -193,11 +201,19 @@ const Navbar = () => {
                     {/* Mobile item background */}
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-300 scale-95 group-hover:scale-100"></div>
                     
-                    {/* Icon and text */}
-                    <span className="relative flex items-center gap-3">
-                      <span className="text-2xl transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
-                        {item.icon}
-                      </span>
+                    {/* Icon left side */}
+                    <span
+                      className={`text-2xl transform transition-all duration-300 ${
+                        activeSection === item.name
+                          ? 'opacity-100 scale-100'
+                          : 'opacity-0 scale-75 group-hover:opacity-100 group-hover:scale-100'
+                      }`}
+                    >
+                      {item.icon}
+                    </span>
+
+                    {/* Text */}
+                    <span className="relative">
                       {item.name}
                     </span>
                     
