@@ -6,9 +6,19 @@ import { FaGithub } from "react-icons/fa";
 import { FaHackerrank } from "react-icons/fa";
 import SocialCard from "../Footer/SocialCard";
 import ProjectStats from "../Projects/ProjectStats ";
-import Avatar from "../../Assets/Developer.png";
+import Avatar from "../../Assets/Profile_photo.jpg";
 
 const Home = () => {
+  const downloadResume = (e) => {
+    e.preventDefault();
+    const link = document.createElement("a");
+    link.href = "/portfolio-website/public/Resume/Resume.pdf"; // Your correct path here
+    link.download = "RohitKamble_Resume.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <>
       {/* Animated background */}
@@ -85,10 +95,13 @@ const Home = () => {
               </button>
             </a>
 
+            {/* Updated Resume download button */}
             <a
-              href="/public/resume/MyResume.pdf"
-              download="RohitKamble_Resume.pdf"
+              href="/portfolio-website/public/Resume/Resume.pdf"
+              onClick={downloadResume}
               className="group relative overflow-hidden text-white py-3 px-6 text-sm md:text-lg font-semibold rounded-full bg-gradient-to-r from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-slate-500/25 transform active:scale-95 flex items-center gap-2 border border-slate-600"
+              role="button"
+              tabIndex={0}
             >
               <span className="relative z-10 flex items-center gap-2">
                 Resume
