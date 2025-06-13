@@ -281,29 +281,29 @@ const Experience = () => {
   ];
 
   // Job experience data
-  const jobExperience = [
-    {
-      logo: <FaGoogle color="#4285F4" size={50} />,
-      position: "Software Engineer",
-      company: "Google",
-      date: "Sept 2023 - Present",
-      responsibilities: ["Work as software developer", "Senior SDE-developer"]
-    },
-    {
-      logo: <RiNetflixFill color="#E50914" size={50} />,
-      position: "Software Engineer", 
-      company: "Netflix",
-      date: "Sept 2023 - Present",
-      responsibilities: ["Work as software developer", "Senior SDE-developer"]
-    },
-    {
-      logo: <FaAmazon color="#FF9900" size={50} />,
-      position: "Software Engineer",
-      company: "Amazon", 
-      date: "Sept 2023 - Present",
-      responsibilities: ["Work as software developer", "Senior SDE-developer"]
-    }
-  ];
+  // const jobExperience = [
+  //   {
+  //     logo: <FaGoogle color="#4285F4" size={50} />,
+  //     position: "Software Engineer",
+  //     company: "Google",
+  //     date: "Sept 2023 - Present",
+  //     responsibilities: ["Work as software developer", "Senior SDE-developer"]
+  //   },
+  //   {
+  //     logo: <RiNetflixFill color="#E50914" size={50} />,
+  //     position: "Software Engineer", 
+  //     company: "Netflix",
+  //     date: "Sept 2023 - Present",
+  //     responsibilities: ["Work as software developer", "Senior SDE-developer"]
+  //   },
+  //   {
+  //     logo: <FaAmazon color="#FF9900" size={50} />,
+  //     position: "Software Engineer",
+  //     company: "Amazon", 
+  //     date: "Sept 2023 - Present",
+  //     responsibilities: ["Work as software developer", "Senior SDE-developer"]
+  //   }
+  // ];
 
   return (
     <div id="Key_skills" className="pt-10 md:pt-24 pb-0 md:pb-0 px-10 md:px-24 relative overflow-hidden">
@@ -330,7 +330,7 @@ const Experience = () => {
       }`}>
         <h1 className="text-2xl md:text-4xl text-white font-bold mb-4 relative inline-block">
           <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
-            Key Skills
+            Technologies & Tools
           </span>
           
           {/* Animated underline */}
@@ -364,7 +364,7 @@ const Experience = () => {
       </div>
 
       {/* Job Experience Section */}
-      <div className="relative z-10 mt-16">
+      {/* <div className="relative z-10 mt-16">
         <h2 className={`text-xl md:text-2xl text-slate-300 font-semibold mb-8 transition-all duration-700 delay-500 transform ${
           sectionVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'
         }`}>
@@ -384,7 +384,7 @@ const Experience = () => {
             />
           ))}
         </div>
-      </div>
+      </div> */}
 
       <style jsx>{`
         @keyframes widthGrow {

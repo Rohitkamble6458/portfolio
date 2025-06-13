@@ -11,55 +11,29 @@ import Avatar from "../../Assets/Profile_photo.jpg";
 const Home = () => {
   const downloadResume = (e) => {
     e.preventDefault();
-    
-    try {
-      // Method 1: Direct download using fetch (recommended)
-      const resumePath = "/Resume/Resume.pdf"; // Remove 'public' from path
-      
-      
-      fetch(resumePath)
-        .then(response => {
-          if (!response.ok) {
-            throw new Error('Resume file not found');
-          }
-          return response.blob();
-        })
-        .then(blob => {
-          const url = window.URL.createObjectURL(blob);
-          const link = document.createElement("a");
-          link.href = url;
-          link.download = "RohitKamble_Resume.pdf";
-          document.body.appendChild(link);
-          link.click();
-          document.body.removeChild(link);
-          window.URL.revokeObjectURL(url);
-        })
-        .catch(error => {
-          console.error('Error downloading resume:', error);
-          // Fallback: try direct link method
-          window.open(resumePath, '_blank');
-        });
-    } catch (error) {
-      console.error('Download failed:', error);
-      alert('Sorry, unable to download resume. Please try again later.');
-    }
-  };
+    const resumePath = `${import.meta.env.BASE_URL}Resume/Resume.pdf`; // ✅ Correct path
 
-  // Alternative method - simpler approach
-  const downloadResumeSimple = (e) => {
-    e.preventDefault();
-    const resumePath = "/Resume/Resume.pdf";
-    
-    // Create a temporary link element
-    const link = document.createElement("a");
-    link.href = resumePath;
-    link.download = "RohitKamble_Resume.pdf";
-    link.target = "_blank"; // Fallback to open in new tab if download fails
-    
-    // Add to DOM, click, and remove
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    fetch(resumePath)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Resume file not found");
+        }
+        return response.blob();
+      })
+      .then((blob) => {
+        const url = window.URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = "RohitKamble_Resume.pdf";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        window.URL.revokeObjectURL(url);
+      })
+      .catch((error) => {
+        console.error("Error downloading resume:", error);
+        window.open(resumePath, "_blank"); // fallback
+      });
   };
 
   return (
