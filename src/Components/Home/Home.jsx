@@ -11,7 +11,7 @@ import Avatar from "../../Assets/Profile_photo.jpg";
 const Home = () => {
   const downloadResume = (e) => {
     e.preventDefault();
-    const resumePath = `${import.meta.env.BASE_URL}Resume/Resume.pdf`; // ✅ Correct path
+    const resumePath = `${import.meta.env.BASE_URL}/Resume/Resume.pdf`; // ✅ Correct path
 
     fetch(resumePath)
       .then((response) => {
