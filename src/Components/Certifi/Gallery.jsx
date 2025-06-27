@@ -1,6 +1,7 @@
 import React from "react";
 import CertificateCard from "./CertificateCard";
 import ExcelImg from "../../Assets/Excel-Mother-of-Business-Intelligence.jpg";
+import PowerBImg from "../../Assets/Get Job Ready- Power BI Data Analytics for All Levels 3.0.png";
 import pythonImg from "../../Assets/python_basic.png";
 import SQLImg from "../../Assets/SQL_basic.png";
 import Software_engineerImag from "../../Assets//Software_engineer.png";
@@ -14,12 +15,20 @@ const certificates = [
       "Awarded for mastering Excel tools used in business intelligence, data analysis, and automation.",
     verifyLink: "https://codebasics.io/certificate/CB-51-276135",
   },
+  
   {
     image: pythonImg,
     title: "Python Programming Certificate From HackerRank",
     description:
       "Certified for fundamental knowledge in Python including loops, functions, and problem-solving.",
     verifyLink: "https://www.hackerrank.com/certificates/62d12db16ea8",
+  },
+  {
+    image: PowerBImg,
+    title: "Get Job Ready- Power BI Data Analytics for All Levels 3.0",
+    description:
+      "Awarded for mastering Power BI tools used in business intelligence, data analysis, and automation.",
+    verifyLink: "https://codebasics.io/certificate/CB-49-276135",
   },
   {
     image: SQLImg,
