@@ -49,8 +49,9 @@ const ChevronRightIcon = () => (
 const ProjectCard = ({
   title,
   main,
-  demoLink,
-  sourceCodeLink,
+  View_Project,
+  LinkedIn_link,
+  GitHub_link,
   bannerImg,
   projectImages = [],
   projectCaptions = [],
@@ -66,11 +67,12 @@ const ProjectCard = ({
   const cardRef = useRef(null);
 
   const allImages = projectImages.length > 0 ? projectImages : [bannerImg];
-  const allCaptions = projectImages.length > 0 
-    ? projectCaptions.length > 0 
-      ? projectCaptions 
-      : new Array(projectImages.length).fill("")
-    : [""];
+  const allCaptions =
+    projectImages.length > 0
+      ? projectCaptions.length > 0
+        ? projectCaptions
+        : new Array(projectImages.length).fill("")
+      : [""];
 
   // Intersection Observer for scroll animations
   useEffect(() => {
@@ -119,14 +121,14 @@ const ProjectCard = ({
       <div
         ref={cardRef}
         className={`p-4 sm:p-5 pb-0 mb-0 flex flex-col w-96 sm:w-80 md:w-96 lg:w-80 xl:w-96 h-[520px] sm:h-[540px] bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm border border-slate-700/50 shadow-xl shadow-slate-900 rounded-2xl transition-all duration-700 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20 flex-shrink-0 relative overflow-hidden group ${
-          isVisible 
-            ? 'animate-slideInUp opacity-100 translate-y-0' 
-            : 'opacity-0 translate-y-12'
+          isVisible
+            ? "animate-slideInUp opacity-100 translate-y-0"
+            : "opacity-0 translate-y-12"
         }`}
       >
         {/* Animated background gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 to-purple-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-        
+
         {/* Floating particles effect */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="particle particle-1"></div>
@@ -134,9 +136,11 @@ const ProjectCard = ({
           <div className="particle particle-3"></div>
         </div>
 
-        <h3 className={`px-3 sm:px-4 text-xl sm:text-xl lg:text-2xl font-bold leading-tight mb-3 sm:mb-4 line-clamp-2 relative z-10 text-white transition-all duration-500 group-hover:translate-y-[-2px] group-hover:text-blue-200 ${
-          isVisible ? 'animate-fadeInRight' : 'opacity-0 translate-x-8'
-        }`}>
+        <h3
+          className={`px-3 sm:px-4 text-xl sm:text-xl lg:text-2xl font-bold leading-tight mb-3 sm:mb-4 line-clamp-2 relative z-10 text-white transition-all duration-500 group-hover:translate-y-[-2px] group-hover:text-blue-200 ${
+            isVisible ? "animate-fadeInRight" : "opacity-0 translate-x-8"
+          }`}
+        >
           {title}
           {/* Animated underline from certificate card */}
           <div className="h-0.5 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mt-2 w-0 group-hover:w-3/4 transition-all duration-500 rounded-full"></div>
@@ -144,7 +148,7 @@ const ProjectCard = ({
 
         <div
           className={`overflow-hidden rounded-lg cursor-pointer mb-2 sm:mb-3 relative z-10 group-hover:rounded-xl transition-all duration-500 ${
-            isVisible ? 'animate-zoomInBounce' : 'opacity-0 scale-95'
+            isVisible ? "animate-zoomInBounce" : "opacity-0 scale-95"
           }`}
           onClick={openModal}
         >
@@ -161,17 +165,22 @@ const ProjectCard = ({
           </div>
         </div>
 
-        <p className={`px-3 sm:px-4 text-sm sm:text-sm lg:text-base leading-relaxed py-2 sm:py-3 flex-grow overflow-hidden line-clamp-5 cursor-pointer relative z-10 text-gray-300 transition-all duration-500 ${
-          isVisible ? 'animate-fadeInLeft' : 'opacity-0 translate-x-8'
-        }`} onClick={openModal}>
+        <p
+          className={`px-3 sm:px-4 text-sm sm:text-sm lg:text-base leading-relaxed py-2 sm:py-3 flex-grow overflow-hidden line-clamp-5 cursor-pointer relative z-10 text-gray-300 transition-all duration-500 ${
+            isVisible ? "animate-fadeInLeft" : "opacity-0 translate-x-8"
+          }`}
+          onClick={openModal}
+        >
           {main}
         </p>
 
         {/* Badge in card view */}
         {(badgeIcon || badgeText) && (
-          <div className={`flex justify-between items-center px-3 sm:px-4 mb-3 relative z-10 transition-all duration-500 ${
-            isVisible ? 'animate-bounceInScale' : 'opacity-0 scale-0'
-          }`}>
+          <div
+            className={`flex justify-between items-center px-3 sm:px-4 mb-3 relative z-10 transition-all duration-500 ${
+              isVisible ? "animate-bounceInScale" : "opacity-0 scale-0"
+            }`}
+          >
             {badgeText && (
               <span
                 className="text-black text-xs font-semibold px-2 py-1 rounded-full transform hover:scale-110 transition-transform duration-200"
@@ -181,30 +190,36 @@ const ProjectCard = ({
               </span>
             )}
             {badgeIcon && (
-              <img src={badgeIcon} alt="Badge Icon" className="h-8 w-8 animate-pulse" />
+              <img
+                src={badgeIcon}
+                alt="Badge Icon"
+                className="h-8 w-8 animate-pulse"
+              />
             )}
           </div>
         )}
 
-        <div className={`mt-auto p-3 sm:p-4 flex gap-3 sm:gap-4 relative z-10 transition-all duration-500 ${
-          isVisible ? 'animate-slideInBottom' : 'opacity-0 translate-y-8'
-        }`}>
+        <div
+          className={`mt-auto p-3 sm:p-4 flex gap-3 sm:gap-4 relative z-10 transition-all duration-500 ${
+            isVisible ? "animate-slideInBottom" : "opacity-0 translate-y-8"
+          }`}
+        >
           <a
-            href={demoLink}
+            onClick={openModal}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 text-center text-white py-2 px-2 sm:px-3 text-xs sm:text-sm lg:text-base hover:opacity-85 duration-300 hover:scale-105 font-semibold rounded-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-all transform hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/25 active:scale-95"
+            className="flex-1 text-center text-white py-2 px-2 sm:px-3 text-xs sm:text-sm lg:text-base hover:opacity-85 duration-300 hover:scale-105 font-semibold rounded-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-all transform hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/25 active:scale-95 cursor-pointer"
           >
-            Demo
+            View Project
           </a>
-          <a
+          {/* <a
             href={sourceCodeLink}
             target="_blank"
             rel="noopener noreferrer"
             className="flex-1 text-center text-white py-2 px-2 sm:px-3 text-xs sm:text-sm lg:text-base hover:opacity-85 duration-300 hover:scale-105 font-semibold rounded-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-all transform hover:-translate-y-1 hover:shadow-lg hover:shadow-purple-500/25 active:scale-95"
           >
             Source Code
-          </a>
+          </a> */}
         </div>
       </div>
 
@@ -260,14 +275,14 @@ const ProjectCard = ({
                     {main}
                   </p>
 
-                  <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 animate-bounceIn">
+                  {/* <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 animate-bounceIn">
                     <a
                       href={demoLink}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 text-center text-sm sm:text-base lg:text-lg rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25 transform active:scale-95"
                     >
-                      View Demo ✓
+                      View Project Engagement  ✓
                     </a>
                     <a
                       href={sourceCodeLink}
@@ -275,7 +290,44 @@ const ProjectCard = ({
                       rel="noopener noreferrer"
                       className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 text-center text-sm sm:text-base lg:text-lg rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25 transform active:scale-95"
                     >
-                      View Source Code ✓
+                      View Project on GitHub ✓
+                    </a>
+                  </div> */}
+                  <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 animate-bounceIn">
+                    <a
+                      href={LinkedIn_link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 text-sm sm:text-base lg:text-lg rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25 transform active:scale-95"
+                    >
+                      <div className="flex items-center justify-center w-8 h-8 bg-white rounded-full">
+                        <svg
+                          className="w-6 h-6 text-blue-600"
+                          fill="currentColor"
+                          viewBox="0 0 25 25"
+                        >
+                          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                        </svg>
+                      </div>
+                      <span>View Project Engagement</span>
+                    </a>
+
+                    <a
+                      href={GitHub_link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-3 bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 text-sm sm:text-base lg:text-lg rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-green-500/25 transform active:scale-95 cursor-pointer"
+                    >
+                      <div className="flex items-center justify-center w-8 h-8 bg-white rounded-full">
+                        <svg
+                          className="w-6 h-6 text-black"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                        </svg>
+                      </div>
+                      <span>View Project on GitHub</span>
                     </a>
                   </div>
                 </div>
@@ -310,7 +362,7 @@ const ProjectCard = ({
                       </>
                     )}
                   </div>
-                  
+
                   {/* Image Caption */}
                   {allCaptions[currentImageIndex] && (
                     <div className="mt-3 p-3 bg-gray-800 rounded-lg animate-fadeInUp">
@@ -409,21 +461,25 @@ const ProjectCard = ({
 
         /* Certificate Card Animations */
         @keyframes fadeIn {
-          from { opacity: 0; }
-          to { opacity: 1; }
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
         }
-        
+
         @keyframes slideUp {
-          from { 
+          from {
             opacity: 0;
             transform: translateY(50px) scale(0.95);
           }
-          to { 
+          to {
             opacity: 1;
             transform: translateY(0) scale(1);
           }
         }
-        
+
         @keyframes fadeInUp {
           from {
             opacity: 0;
@@ -434,7 +490,7 @@ const ProjectCard = ({
             transform: translateY(0);
           }
         }
-        
+
         @keyframes zoomIn {
           from {
             opacity: 0;
@@ -445,7 +501,7 @@ const ProjectCard = ({
             transform: scale(1);
           }
         }
-        
+
         @keyframes slideRight {
           from {
             opacity: 0;
@@ -456,7 +512,7 @@ const ProjectCard = ({
             transform: translateX(0);
           }
         }
-        
+
         @keyframes slideLeft {
           from {
             opacity: 0;
@@ -467,7 +523,7 @@ const ProjectCard = ({
             transform: translateX(0);
           }
         }
-        
+
         @keyframes bounceIn {
           0% {
             opacity: 0;
@@ -573,7 +629,8 @@ const ProjectCard = ({
         }
 
         @keyframes float {
-          0%, 100% {
+          0%,
+          100% {
             opacity: 0;
             transform: translateY(0px) rotate(0deg);
           }
@@ -587,27 +644,27 @@ const ProjectCard = ({
         .animate-fadeIn {
           animation: fadeIn 0.3s ease-out;
         }
-        
+
         .animate-slideUp {
           animation: slideUp 0.4s ease-out;
         }
-        
+
         .animate-fadeInUp {
           animation: fadeInUp 0.5s ease-out;
         }
-        
+
         .animate-zoomIn {
           animation: zoomIn 0.6s ease-out;
         }
-        
+
         .animate-slideRight {
           animation: slideRight 0.5s ease-out 0.2s both;
         }
-        
+
         .animate-slideLeft {
           animation: slideLeft 0.5s ease-out 0.3s both;
         }
-        
+
         .animate-bounceIn {
           animation: bounceIn 0.6s ease-out 0.4s both;
         }

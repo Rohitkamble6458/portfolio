@@ -13,8 +13,14 @@ import CurrencyConverterImg2 from "../../Assets/CurrencyConverter.jpeg";
 import salesreport from "../../Assets/sales&finance_report.png";
 import salesreportbanner from "../../Assets/exxcel-(1).webp";
 import sqlbanner from "../../Assets/sql545.png";
-import business from "../../Assets/power600.png";
+// import business from "../../Assets/power600.png";
 import power from "../../Assets/power600-(1).png";
+// import power from "../../Assets/BI 360.png";
+import bi360Home from "../../Assets/bi360.png";
+import financeview from "../../Assets/Finance view.png";
+import salesview from "../../Assets/Sales View.png";
+import Marketingview from "../../Assets/Marketing view.png";
+import datamodel from "../../Assets/BI_360_data_model.png";
 
 import PasswordGeneratorImg from "../../Assets/passwordGenrator.jpeg";
 import PasswordGeneratorImg1 from "../../Assets/passwordGenrator.jpeg";
@@ -28,62 +34,65 @@ const projects = [
   {
     title: "Business insights 360",
     main: "Developed an interactive Power BI dashboard to analyze AtliQ Hardware's global sales trends using data from Excel and SQL sources. Built a clean data model, optimized DAX calculations with DAX Studio, and delivered key insights that supported a projected 10% revenue increase and 20% reduction in data processing costs.",
-    demoLink: "https://rohitkamble6458.github.io/Practice-Javascript-project/",
-    sourceCodeLink:
+    LinkedIn_link: "https://www.linkedin.com/posts/rohitkamble6458_business-insights-360-activity-7344319646432489472-K67n?utm_source=share&utm_medium=member_desktop&rcm=ACoAADaXON8Bl36ynYfSgHDBLOvQT_5P1KXMXKM",
+    Github:
       "https://github.com/Rohitkamble6458/Sales-and-Financial-Report",
     bannerImg: power,
-    projectImages: [power, business],
+    projectImages: [bi360Home,financeview,salesview,Marketingview,datamodel],
+    projectCaptions : [
+    "Business insights 360",
+    "Finance View",
+    "Sales View",
+    "Marketing View",
+    "Data Modeling (SnowFlake Schema)",
+  ],
     powerBiEmbedUrl:
       "https://app.powerbi.com/view?r=eyJrIjoiNGVmNWRhM2EtYjc5Ny00NWI1LTllZjItMjRjMmUwY2YyZTIxIiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJjNCJ9",
     powerBILink: "",
     badgeText: "Power Bi project",
     badgeIcon: powerBi,
-    projectDetails: `Need to develop a dashboard for AtliQ hardware focusing on Finance, Sales, Marketing, Supply Chain, and Executive areas.
-
-Focused Areas:
-
-Data Modeling (Star Schemas & Partial Snowflake Schemas)
-Interactive and user-friendly dynamic dashboards
-Data drill-down capabilities
-Key Learnings:
-Advanced Power Query
-Complex DAX Formulas
-Data Modeling with 10+ tables
-Using Bookmarks to Switch Visuals
-Navigation Buttons
-Tooltips
-Updating Stakeholder Requirements
-DAX Studio
-Metrics for Sales, Marketing, Finance, and Supply Chain`,
+    projectDetails: `This project, which combines Power BI, SQL, and Excel, centers around addressing operational issues at AtliQ Hardware, a prominent global consumer electronics company. The company's heavy reliance on Excel for data analysis has led to significant losses in some regions. To rectify this, senior management aims to initiate a data analytics project, leveraging data from the previous year to enhance performance and drive improvements.
+💼Finance View: shows profit and loss statement like GM,NP,NS etc. and performance over time chart w.r.t to key metrices.
+📣Sales View: Shows customers and product performance , unit economics and performance matrix by NS and GM%
+📣 Marketing View: Shows region and product performance , unit economics and performance matrix by NS and GM%
+🚚 Supply Chain View: shows forecast accuracy, Net Error, trends and key metrices by customers and product.
+👨‍🎓 Executive View: shows market share of competitors, trends,revenue by division and channel, top 5 customer`,
   },
   {
     title: "Sales and financial Report",
     main: "In this project, I created a sales report using Excel pivot tables to help businesses find effective customer discounts, improve negotiations, and spot growth opportunities in new countries. The report offers insights to optimize strategies, boost satisfaction, and increase revenue",
-    demoLink: "https://rohitkamble6458.github.io/Practice-Javascript-project/",
-    sourceCodeLink:
+    LinkedIn_link: "https://www.linkedin.com/posts/rohitkamble6458_atliq-salesfinancereport-activity-7340713884166647809-HS82?utm_source=share&utm_medium=member_desktop&rcm=ACoAADaXON8Bl36ynYfSgHDBLOvQT_5P1KXMXKM",
+    GitHub_link:
       "https://github.com/Rohitkamble6458/Sales-and-Financial-Report",
     bannerImg: salesreportbanner,
     projectImages: [salesreport],
     badgeText: "Excel project",
     badgeBgColor :"#22c55e",
     badgeIcon: excel,
-    projectDetails: `Here's what I learned:
+    projectDetails: `Analyzed AtliQ Hardware’s sales performance from 2019 to 2021, supporting strategic decision-making.
 
-Pivot Tables
-Power Query
-Basic DAX
-Conditional Formatting
-Advanced Excel formulas (VLOOKUP, XLOOKUP, INDEX-MATCH, IF statements)
-Report Design
-Sales Metrics
-Overall, this project equips businesses with the tools and insights to track, analyze, and improve their sales performance. By analyzing sales data, businesses can uncover new opportunities, grow, and remain competitive in a fast-changing market.`,
+Key insights include:
+
+- Implemented ETL processes to streamline data handling.
+- Efficiently cleaned data using Power Query Editor.
+- Established data relationships with Power Pivot.
+- Developed DAX measures for detailed financial and sales analysis.
+- Generated comprehensive P&L statements and sales performance reports using pivot tables.
+
+Sales highlights:
+
+- Top-selling product: 'AQ Electron 4 3600 Desktop Processor' with $19.35M in sales.
+- Introduction of 16 new products in 2021 contributed to $176.16M in sales.
+- Highest sales recorded in India, USA, and South Korea.
+
+The detailed report provided valuable insights that facilitated data-driven decisions to enhance growth and efficiency.`,
   },
   {
     title: "Music Store Analysis ",
     main: "This project is a hands-on SQL case study using a digital music store database to analyze employee roles, customer behavior, track sales trends, and genre popularity. The project is executed using PostgreSQL, and provides a practical understanding of real-world data relationships and business questions.",
-    demoLink:
+    LinkedIn_link:
       "https://github.com/Rohitkamble6458/Music_store_Data_Analysis/blob/main/music_store_analysis.sql",
-    sourceCodeLink:
+    GitHub_link:
       "https://github.com/Rohitkamble6458/Music_store_Data_Analysis",
     bannerImg: sqlbanner,
     projectImages: [sqlbanner, sqlbanner],
@@ -108,8 +117,8 @@ Overall, this project equips businesses with the tools and insights to track, an
   {
     title: "Currency Converter",
     main: "A React-based Currency Converter with real-time rates, default USD to INR, featuring state management, props, hooks, and swap functionality.",
-    demoLink: "https://Rohitkamble6458.github.io/CurrencyConverter/",
-    sourceCodeLink: "https://github.com/Rohitkamble6458/CurrencyConverter",
+    LinkedIn_link: "https://Rohitkamble6458.github.io/CurrencyConverter/",
+    GitHub_link: "https://github.com/Rohitkamble6458/CurrencyConverter",
     bannerImg: CurrencyConverterImg,
     projectImages: [CurrencyConverterImg1, CurrencyConverterImg2],
     projectDetails: `
@@ -131,8 +140,8 @@ Improved understanding of useState, useEffect, and conditional rendering.
   {
     title: "Password Generator",
     main: "A responsive React-based password generator using hooks like useState, useEffect, and useCallback, with customizable options and a copy-to-clipboard feature.",
-    demoLink: "https://rohitkamble6458.github.io/Password-Generator/",
-    sourceCodeLink: "https://github.com/Rohitkamble6458/Password-Generator",
+    LinkedIn_link: "https://rohitkamble6458.github.io/Password-Generator/",
+    GitHub_link: "https://github.com/Rohitkamble6458/Password-Generator",
     bannerImg: PasswordGeneratorImg,
     projectImages: [PasswordGeneratorImg, PasswordGeneratorImg2],
 
@@ -155,15 +164,15 @@ Solidified use of hooks and form state management.
   {
     title: "Amazon UI Clone",
     main: "A responsive Amazon homepage replica built with HTML and CSS.",
-    demoLink: "https://rohitkamble6458.github.io/Amazon_UI_clone/",
-    sourceCodeLink: "https://github.com/Rohitkamble6458/Amazon_UI_clone",
+    LinkedIn_link: "https://rohitkamble6458.github.io/Amazon_UI_clone/",
+    GitHub_link: "https://github.com/Rohitkamble6458/Amazon_UI_clone",
     bannerImg: AmazonUiCloneImg,
   },
   {
     title: "Awesome JS_Project",
     main: "A collection of interactive JavaScript projects showcasing DOM manipulation, event handling, and dynamic web features, ideal for learning and practicing front-end development.",
-    demoLink: "https://rohitkamble6458.github.io/Practice-Javascript-project/",
-    sourceCodeLink:
+    LinkedIn_link: "https://rohitkamble6458.github.io/Practice-Javascript-project/",
+    GitHub_link:
       "https://github.com/Rohitkamble6458/Practice-Javascript-project",
     bannerImg: JSProjectsListImg,
   },
