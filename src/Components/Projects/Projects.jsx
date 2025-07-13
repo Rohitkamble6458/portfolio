@@ -13,7 +13,7 @@ import CurrencyConverterImg2 from "../../Assets/CurrencyConverter.jpeg";
 import salesreport from "../../Assets/sales&finance_report.png";
 import salesreportbanner from "../../Assets/exxcel-(1).webp";
 import sqlbanner from "../../Assets/sql545.png";
-// import business from "../../Assets/power600.png";
+import schema from "../../Assets/schema_diagram.png";
 import power from "../../Assets/power600-(1).png";
 // import power from "../../Assets/BI 360.png";
 import bi360Home from "../../Assets/bi360.png";
@@ -35,8 +35,7 @@ const projects = [
     title: "Business insights 360",
     main: "Developed an interactive Power BI dashboard to analyze AtliQ Hardware's global sales trends using data from Excel and SQL sources. Built a clean data model, optimized DAX calculations with DAX Studio, and delivered key insights that supported a projected 10% revenue increase and 20% reduction in data processing costs.",
     LinkedIn_link: "https://www.linkedin.com/posts/rohitkamble6458_business-insights-360-activity-7344319646432489472-K67n?utm_source=share&utm_medium=member_desktop&rcm=ACoAADaXON8Bl36ynYfSgHDBLOvQT_5P1KXMXKM",
-    Github:
-      "https://github.com/Rohitkamble6458/Sales-and-Financial-Report",
+    GitHub_link: "https://github.com/Rohitkamble6458/Business-Insights360",
     bannerImg: power,
     projectImages: [bi360Home,financeview,salesview,Marketingview,datamodel],
     projectCaptions : [
@@ -88,31 +87,49 @@ Sales highlights:
 The detailed report provided valuable insights that facilitated data-driven decisions to enhance growth and efficiency.`,
   },
   {
-    title: "Music Store Analysis ",
-    main: "This project is a hands-on SQL case study using a digital music store database to analyze employee roles, customer behavior, track sales trends, and genre popularity. The project is executed using PostgreSQL, and provides a practical understanding of real-world data relationships and business questions.",
+    title: "Music Store Analysis",
+    main: "This project is a comprehensive SQL case study using a digital music store database to extract valuable business insights. It explores customer behavior, employee roles, sales trends, and genre popularity through real-world problem-solving. The project is implemented using PostgreSQL and focuses on developing a strong understanding of relational databases, SQL querying, and analytical thinking.",
     LinkedIn_link:
       "https://github.com/Rohitkamble6458/Music_store_Data_Analysis/blob/main/music_store_analysis.sql",
     GitHub_link:
       "https://github.com/Rohitkamble6458/Music_store_Data_Analysis",
     bannerImg: sqlbanner,
-    projectImages: [sqlbanner, sqlbanner],
+    projectImages: [sqlbanner, schema],
     projectCaptions : [
     "Dashboard overview showing key metrics",
-    "User interface with interactive components"
+    "Data Modeling(ER Diagram)"
   ],
     badgeBgColor :"#57A1EB",
     badgeText: "SQL project",
     badgeIcon: sql,
-    projectDetails: `Here's what I learned:
+    projectDetails: `📣 Project Outcome
+• Identified top customers, high-revenue cities, and best-performing employees.
+• Discovered popular music genres and top artists by analyzing customer listening behavior.
+• Extracted key business insights like spending patterns and genre trends across countries.
+• Gained hands-on experience with SQL functions, joins, CTEs, and window functions in PostgreSQL.
+• Demonstrated real-world data analysis and problem-solving using a music store database.
+• Built a portfolio-ready SQL project showcasing analytical thinking and technical skills.
+    
+  🔧 Functions & SQL Concepts Used :
 
-Pivot Tables
-Power Query
-Basic DAX
-Conditional Formatting
-Advanced Excel formulas (VLOOKUP, XLOOKUP, INDEX-MATCH, IF statements)
-Report Design
-Sales Metrics
-Overall, this project equips businesses with the tools and insights to track, analyze, and improve their sales performance. By analyzing sales data, businesses can uncover new opportunities, grow, and remain competitive in a fast-changing market.`,
+🔍 SQL Clauses & Statements:
+• SELECT, FROM, WHERE, GROUP BY, ORDER BY, LIMIT
+• DISTINCT, COUNT(), SUM(), AVG()
+• JOIN, INNER JOIN
+• WITH (Common Table Expressions - CTEs)
+• ROW_NUMBER() for ranking and partitioning
+• Subqueries and Nested Queries
+• Aggregation & Filtering
+• Aliasing (AS)
+• PARTITION BY and OVER() for window functions
+
+📊 Key Analytical Capabilities Demonstrated:
+• Identifying top customers, countries, and cities by revenue
+• Genre-based customer segmentation and artist analysis
+• Analyzing average vs. long track durations
+• Revenue contribution by customer and artist
+• Genre popularity per country
+• Country-wise top-spending customers`,
   },
   {
     title: "Currency Converter",
