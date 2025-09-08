@@ -71,9 +71,10 @@ const Home = () => {
 
           {/* Enhanced description */}
           <p className="text-sm md:text-2xl tracking-tight mb-8 leading-relaxed animate-slideInUp animation-delay-300 bg-gradient-to-r from-gray-300 to-gray-100 bg-clip-text text-transparent">
-            A passionate and detail-oriented software developer skilled in
+            {/* A passionate and detail-oriented software developer skilled in
             front-end development, web systems, and software design, eager to
-            apply knowledge and contribute to impactful projects.
+            apply knowledge and contribute to impactful projects. */}
+            Data analyst & Reporting professional skilled in Power BI, Excel, Python, and SQL, turning complex data into actionable insights through dashboards, analytics, and automation.
           </p>
 
           {/* Avatar section - visible only on mobile, positioned between heading and description */}

@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { FaHtml5, FaCss3, FaReact, FaJs, FaGithub, FaCloud } from 'react-icons/fa';
-import { SiTailwindcss, SiMongodb, SiMysql, SiC, SiPython, SiPostgresql } from 'react-icons/si';
 
 const SkillButton = ({ skill, index }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -360,22 +358,6 @@ const Experience = () => {
   // Key skills data
   const skills = ["SQL", "PYTHON", "POWER BI", "ADVANCED EXCEL"];
 
-  // Technology skills data
-  const techSkills = [
-    { logo: <FaHtml5 color="#E34F26" size={50} />, title: "HTML", bgColor: "bg-zinc-950" },
-    { logo: <FaCss3 color="#1572B6" size={50} />, title: "CSS", bgColor: "bg-zinc-950" },
-    { logo: <SiTailwindcss color="Blue" size={50} />, title: "TailwindCSS", bgColor: "bg-white" },
-    { logo: <FaReact color="#61DAFB" size={50} />, title: "React", bgColor: "bg-zinc-950" },
-    { logo: <FaJs color="#F7DF1E" size={50} />, title: "JavaScript", bgColor: "bg-zinc-950" },
-    { logo: <FaGithub color="white" size={50} />, title: "GitHub", bgColor: "bg-black" },
-    { logo: <SiMongodb color="#47A248" size={50} />, title: "MongoDB", bgColor: "bg-zinc-950" },
-    { logo: <SiPostgresql color="white" size={50} />, title: "PostgreSQL", bgColor: "bg-blue-700" },
-    { logo: <SiMysql color="yellow" size={50} />, title: "MySQL", bgColor: "bg-zinc-950" },
-    { logo: <SiC color="white" size={50} />, title: "C Language", bgColor: "bg-blue-900" },
-    { logo: <SiPython color="yellow" size={50} />, title: "Python", bgColor: "bg-blue-950" },
-    { logo: <FaCloud color="white" size={50} />, title: "Cloud", bgColor: "bg-blue-700" }
-  ];
-
   return (
     <div id="Key_skills" className="pb-10 md:pb-16 px-10 md:px-24 relative overflow-hidden">
       
@@ -416,46 +398,6 @@ const Experience = () => {
         <div className="flex flex-wrap gap-4 mt-8">
           {skills.map((skill, index) => (
             <SkillButton key={skill} skill={skill} index={index} />
-          ))}
-        </div>
-      </div>
-
-      {/* Section Title */}
-      <div className={`relative z-10 transition-all duration-1000 transform ${
-        sectionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-      }`}>
-        <h1 className="text-2xl md:text-4xl text-white font-bold mb-4 relative inline-block">
-          <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
-            Technologies & Tools
-          </span>
-          
-          {/* Animated underline */}
-          <div className="absolute -bottom-2 left-0 w-0 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500 rounded-full transition-all duration-1000 delay-700"
-               style={{ width: sectionVisible ? '100%' : '0%' }}></div>
-          
-          {/* Floating particles around title */}
-          <div className="absolute -top-2 -right-4 w-2 h-2 bg-blue-400 rounded-full animate-ping opacity-60"></div>
-          <div className="absolute -bottom-2 -left-4 w-1.5 h-1.5 bg-purple-400 rounded-full animate-pulse opacity-60"></div>
-        </h1>
-      </div>
-
-      {/* Technology Skills Section */}
-      <div className="relative z-10 mt-8">
-        <h2 className={`text-xl md:text-2xl text-slate-300 font-semibold mb-6 transition-all duration-700 delay-300 transform ${
-          sectionVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'
-        }`}>
-          Technologies & Tools
-        </h2>
-        
-        <div className="flex flex-wrap justify-start gap-6">
-          {techSkills.map((skill, index) => (
-            <LogoCard
-              key={skill.title}
-              logo={skill.logo}
-              title={skill.title}
-              bgColor={skill.bgColor}
-              index={index}
-            />
           ))}
         </div>
       </div>
