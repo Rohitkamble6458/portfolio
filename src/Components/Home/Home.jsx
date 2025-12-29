@@ -6,6 +6,7 @@ import { FaGithub } from "react-icons/fa";
 import { FaHackerrank } from "react-icons/fa";
 import SocialCard from "../Footer/SocialCard";
 import ProjectStats from "../Projects/ProjectStats ";
+import Experience from "../Experiance/Experiance";
 import Avatar from "../../Assets/Profile_photo.jpg";
 
 const Home = () => {
@@ -172,7 +173,7 @@ const Home = () => {
           <div className="relative group">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-600/30 to-purple-600/30 rounded-full blur-xl group-hover:blur-2xl transition-all duration-500"></div>
             <img
-              className="relative z-10 transform group-hover:scale-105 transition-all duration-500 hover:rotate-2 rounded-full shadow-2xl"
+              className="relative z-10 transform group-hover:scale-105 transition-all duration-500 hover:rotate-2 rounded-full h-85 w-90 shadow-2xl"
               src={Avatar}
               alt="Developer Avatar"
             />
@@ -182,6 +183,7 @@ const Home = () => {
 
       {/* Enhanced ProjectStats with animation */}
       <div className="animate-slideInUp animation-delay-1200">
+        <Experience/>
         <ProjectStats />
       </div>
 

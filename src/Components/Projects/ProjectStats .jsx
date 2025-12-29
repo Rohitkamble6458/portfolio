@@ -89,7 +89,7 @@ const ProjectStats = () => {
     });
   };
 
-  return (
+  return (    
     <div className="w-full flex justify-center items-center py-16 relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 pointer-events-none">
